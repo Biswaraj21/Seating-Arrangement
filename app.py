@@ -251,7 +251,7 @@ if uploaded_file:
                 pd.DataFrame(seats_left_all).to_excel(writer, index=False, sheet_name='Seats_Left')
             xls_buf.seek(0)
             st.download_button(
-                label="📥 Download Consolidated Excel",
+                label=" Download Consolidated Excel",
                 data=xls_buf,
                 file_name="op_overall_seating_arrangement.xlsx",
                 mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
