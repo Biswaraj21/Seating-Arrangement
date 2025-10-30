@@ -75,7 +75,7 @@ def allocate_for_slot(date, day, slot, subjects, students_by_subject, rooms_df, 
     clash_msgs = []
     if clashes:
         for s1, s2, r in clashes:
-            clash_msgs.append(f"⚠️ Clash: {r} in {s1} and {s2}")
+            clash_msgs.append(f" Clash: {r} in {s1} and {s2}")
 
     rooms_info, rooms_by_building = {}, defaultdict(list)
     for _, row in rooms_df.iterrows():
@@ -98,7 +98,7 @@ def allocate_for_slot(date, day, slot, subjects, students_by_subject, rooms_df, 
     total_students = sum(subject_counts.values())
     total_avail = sum(eff_cap_per_sub(r) for r in rooms_info)
     if total_students > total_avail:
-        clash_msgs.append("❌ Cannot allocate due to excess students")
+        clash_msgs.append(" Cannot allocate due to excess students")
 
     subj_assignments = {s: [] for s in subjects}
     for s in sorted(subjects, key=lambda x: -subject_counts[x]):
@@ -142,7 +142,7 @@ def allocate_for_slot(date, day, slot, subjects, students_by_subject, rooms_df, 
 
 # ========== Streamlit UI ==========
 st.set_page_config(page_title="Exam Seating Arrangement", layout="wide")
-st.title("🪑 Exam Seating Arrangement Generator")
+st.title(" Exam Seating Arrangement Generator")
 st.write("Upload Excel with sheets: **in_timetable**, **in_course_roll_mapping**, **in_roll_name_mapping**, **in_room_capacity**")
 
 uploaded_file = st.file_uploader("Upload input_data.xlsx", type=["xlsx"])
@@ -225,7 +225,7 @@ if uploaded_file:
                             zipf.writestr(filename, excel_buffer.read())
 
         zip_buffer.seek(0)
-        st.success("✅ Seating arrangement generated successfully!")
+        st.success("Seating arrangement generated successfully!")
 
         st.subheader("Overall Seating Arrangement Preview")
         st.dataframe(pd.DataFrame(overall_all).head(10))
@@ -239,7 +239,7 @@ if uploaded_file:
                 st.text(c)
 
         st.download_button(
-            label="📥 Download Results (Structured ZIP)",
+            label=" Download Results (Structured ZIP)",
             data=zip_buffer,
             file_name="seating_arrangement_structured.zip",
             mime="application/zip"
