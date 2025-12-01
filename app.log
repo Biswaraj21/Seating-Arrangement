@@ -362,3 +362,385 @@ Traceback (most recent call last):
     raise IOError('Cannot open resource "%s"' % name)
 OSError: 
 fileName='no_image_available.png' identity=[ImageReader@0x187f3a1be00 filename='no_image_available.png'] Cannot open resource "no_image_available.png"
+2025-12-01 11:04:02,974 - ERROR - Error: 
+fileName='no_image_available.png' identity=[ImageReader@0x187e2bf9590 filename='no_image_available.png'] Cannot open resource "no_image_available.png"
+Traceback (most recent call last):
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\lib\utils.py", line 523, in open_for_read
+    return open_for_read_by_name(name,mode)
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\lib\utils.py", line 463, in open_for_read_by_name
+    return open(name,mode)
+FileNotFoundError: [Errno 2] No such file or directory: 'no_image_available.png'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\lib\utils.py", line 530, in open_for_read
+    return BytesIO((datareader if name[:5].lower()=='data:' else rlUrlRead)(name))
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\lib\utils.py", line 476, in rlUrlRead
+    return urlopen(name).read()
+           ~~~~~~~^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\urllib\request.py", line 189, in urlopen
+    return opener.open(url, data, timeout)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\urllib\request.py", line 473, in open
+    req = Request(fullurl, data)
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\urllib\request.py", line 292, in __init__
+    self.full_url = url
+    ^^^^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\urllib\request.py", line 318, in full_url
+    self._parse()
+    ~~~~~~~~~~~^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\urllib\request.py", line 347, in _parse
+    raise ValueError("unknown url type: %r" % self.full_url)
+ValueError: unknown url type: 'no_image_available.png'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\lib\utils.py", line 643, in __init__
+    fp = open_for_read(fileName,'b')
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\lib\utils.py", line 532, in open_for_read
+    raise IOError('Cannot open resource "%s"' % name)
+OSError: Cannot open resource "no_image_available.png"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\91891\Desktop\Projects\Seating Arrangement\streamlit.py", line 351, in <module>
+    build_attendance_pdf(
+    ~~~~~~~~~~~~~~~~~~~~^
+        pdf_buffer=pdf_buf,
+        ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        roll_name_map=roll_name_map
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\91891\Desktop\Projects\Seating Arrangement\streamlit.py", line 286, in build_attendance_pdf
+    pdf.build(elements)
+    ~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\doctemplate.py", line 1322, in build
+    BaseDocTemplate.build(self,flowables, canvasmaker=canvasmaker)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\doctemplate.py", line 1083, in build
+    self.handle_flowable(flowables)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\doctemplate.py", line 932, in handle_flowable
+    if frame.add(f, canv, trySplit=self.allowSplitting):
+       ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\frames.py", line 201, in _add
+    flowable.drawOn(canv, self._x + self._leftExtraIndent, y, _sW=aW-w)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\flowables.py", line 112, in drawOn
+    self._drawOn(canvas)
+    ~~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\flowables.py", line 93, in _drawOn
+    self.draw()#this is the bit you overload
+    ~~~~~~~~~^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\tables.py", line 2355, in draw
+    self._drawCell(cellval, cellstyle, (colpos, rowpos), (colwidth, rowheight))
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\tables.py", line 2568, in _drawCell
+    v.drawOn(self.canv,x,y)
+    ~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\flowables.py", line 112, in drawOn
+    self._drawOn(canvas)
+    ~~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\flowables.py", line 93, in _drawOn
+    self.draw()#this is the bit you overload
+    ~~~~~~~~~^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\tables.py", line 2355, in draw
+    self._drawCell(cellval, cellstyle, (colpos, rowpos), (colwidth, rowheight))
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\tables.py", line 2551, in _drawCell
+    w, h = self._listCellGeom(cellval,colwidth,cellstyle,W=W, H=H,aH=rowheight)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\tables.py", line 500, in _listCellGeom
+    vw, vh = v.wrapOn(canv, aW, aH)
+             ~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\flowables.py", line 123, in wrapOn
+    w, h = self.wrap(aW,aH)
+           ~~~~~~~~~^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\flowables.py", line 510, in wrap
+    return self.drawWidth, self.drawHeight
+           ^^^^^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\flowables.py", line 504, in __getattr__
+    self._setup_inner()
+    ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\flowables.py", line 461, in _setup_inner
+    img = self._img
+          ^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\flowables.py", line 498, in __getattr__
+    self._img = ImageReader(self._file)
+                ~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\lib\utils.py", line 655, in __init__
+    annotateException('\nfileName=%r identity=%s'%(fileName,self.identity()))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\lib\utils.py", line 1176, in annotateException
+    rl_reraise(t,t(sep.join((_ for _ in (msg,str(v),postMsg) if _))),b)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\lib\utils.py", line 138, in rl_reraise
+    raise v.with_traceback(b)
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\lib\utils.py", line 643, in __init__
+    fp = open_for_read(fileName,'b')
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\lib\utils.py", line 532, in open_for_read
+    raise IOError('Cannot open resource "%s"' % name)
+OSError: 
+fileName='no_image_available.png' identity=[ImageReader@0x187e2bf9590 filename='no_image_available.png'] Cannot open resource "no_image_available.png"
+2025-12-01 11:05:53,165 - ERROR - Error: 
+fileName='no_image_available.png' identity=[ImageReader@0x187e2bf91d0 filename='no_image_available.png'] Cannot open resource "no_image_available.png"
+Traceback (most recent call last):
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\lib\utils.py", line 523, in open_for_read
+    return open_for_read_by_name(name,mode)
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\lib\utils.py", line 463, in open_for_read_by_name
+    return open(name,mode)
+FileNotFoundError: [Errno 2] No such file or directory: 'no_image_available.png'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\lib\utils.py", line 530, in open_for_read
+    return BytesIO((datareader if name[:5].lower()=='data:' else rlUrlRead)(name))
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\lib\utils.py", line 476, in rlUrlRead
+    return urlopen(name).read()
+           ~~~~~~~^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\urllib\request.py", line 189, in urlopen
+    return opener.open(url, data, timeout)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\urllib\request.py", line 473, in open
+    req = Request(fullurl, data)
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\urllib\request.py", line 292, in __init__
+    self.full_url = url
+    ^^^^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\urllib\request.py", line 318, in full_url
+    self._parse()
+    ~~~~~~~~~~~^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\urllib\request.py", line 347, in _parse
+    raise ValueError("unknown url type: %r" % self.full_url)
+ValueError: unknown url type: 'no_image_available.png'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\lib\utils.py", line 643, in __init__
+    fp = open_for_read(fileName,'b')
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\lib\utils.py", line 532, in open_for_read
+    raise IOError('Cannot open resource "%s"' % name)
+OSError: Cannot open resource "no_image_available.png"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\91891\Desktop\Projects\Seating Arrangement\streamlit.py", line 351, in <module>
+    build_attendance_pdf(
+    ~~~~~~~~~~~~~~~~~~~~^
+        pdf_buffer=pdf_buf,
+        ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        roll_name_map=roll_name_map
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\91891\Desktop\Projects\Seating Arrangement\streamlit.py", line 286, in build_attendance_pdf
+    pdf.build(elements)
+    ~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\doctemplate.py", line 1322, in build
+    BaseDocTemplate.build(self,flowables, canvasmaker=canvasmaker)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\doctemplate.py", line 1083, in build
+    self.handle_flowable(flowables)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\doctemplate.py", line 932, in handle_flowable
+    if frame.add(f, canv, trySplit=self.allowSplitting):
+       ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\frames.py", line 201, in _add
+    flowable.drawOn(canv, self._x + self._leftExtraIndent, y, _sW=aW-w)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\flowables.py", line 112, in drawOn
+    self._drawOn(canvas)
+    ~~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\flowables.py", line 93, in _drawOn
+    self.draw()#this is the bit you overload
+    ~~~~~~~~~^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\tables.py", line 2355, in draw
+    self._drawCell(cellval, cellstyle, (colpos, rowpos), (colwidth, rowheight))
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\tables.py", line 2568, in _drawCell
+    v.drawOn(self.canv,x,y)
+    ~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\flowables.py", line 112, in drawOn
+    self._drawOn(canvas)
+    ~~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\flowables.py", line 93, in _drawOn
+    self.draw()#this is the bit you overload
+    ~~~~~~~~~^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\tables.py", line 2355, in draw
+    self._drawCell(cellval, cellstyle, (colpos, rowpos), (colwidth, rowheight))
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\tables.py", line 2551, in _drawCell
+    w, h = self._listCellGeom(cellval,colwidth,cellstyle,W=W, H=H,aH=rowheight)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\tables.py", line 500, in _listCellGeom
+    vw, vh = v.wrapOn(canv, aW, aH)
+             ~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\flowables.py", line 123, in wrapOn
+    w, h = self.wrap(aW,aH)
+           ~~~~~~~~~^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\flowables.py", line 510, in wrap
+    return self.drawWidth, self.drawHeight
+           ^^^^^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\flowables.py", line 504, in __getattr__
+    self._setup_inner()
+    ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\flowables.py", line 461, in _setup_inner
+    img = self._img
+          ^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\flowables.py", line 498, in __getattr__
+    self._img = ImageReader(self._file)
+                ~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\lib\utils.py", line 655, in __init__
+    annotateException('\nfileName=%r identity=%s'%(fileName,self.identity()))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\lib\utils.py", line 1176, in annotateException
+    rl_reraise(t,t(sep.join((_ for _ in (msg,str(v),postMsg) if _))),b)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\lib\utils.py", line 138, in rl_reraise
+    raise v.with_traceback(b)
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\lib\utils.py", line 643, in __init__
+    fp = open_for_read(fileName,'b')
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\lib\utils.py", line 532, in open_for_read
+    raise IOError('Cannot open resource "%s"' % name)
+OSError: 
+fileName='no_image_available.png' identity=[ImageReader@0x187e2bf91d0 filename='no_image_available.png'] Cannot open resource "no_image_available.png"
+2025-12-01 11:08:52,875 - ERROR - Error: 
+fileName='no_image_available.png' identity=[ImageReader@0x1b21543bb60 filename='no_image_available.png'] Cannot open resource "no_image_available.png"
+Traceback (most recent call last):
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\lib\utils.py", line 523, in open_for_read
+    return open_for_read_by_name(name,mode)
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\lib\utils.py", line 463, in open_for_read_by_name
+    return open(name,mode)
+FileNotFoundError: [Errno 2] No such file or directory: 'no_image_available.png'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\lib\utils.py", line 530, in open_for_read
+    return BytesIO((datareader if name[:5].lower()=='data:' else rlUrlRead)(name))
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\lib\utils.py", line 476, in rlUrlRead
+    return urlopen(name).read()
+           ~~~~~~~^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\urllib\request.py", line 189, in urlopen
+    return opener.open(url, data, timeout)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\urllib\request.py", line 473, in open
+    req = Request(fullurl, data)
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\urllib\request.py", line 292, in __init__
+    self.full_url = url
+    ^^^^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\urllib\request.py", line 318, in full_url
+    self._parse()
+    ~~~~~~~~~~~^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\urllib\request.py", line 347, in _parse
+    raise ValueError("unknown url type: %r" % self.full_url)
+ValueError: unknown url type: 'no_image_available.png'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\lib\utils.py", line 643, in __init__
+    fp = open_for_read(fileName,'b')
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\lib\utils.py", line 534, in open_for_read
+    return open_for_read(name,mode)
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\lib\utils.py", line 532, in open_for_read
+    raise IOError('Cannot open resource "%s"' % name)
+OSError: Cannot open resource "no_image_available.png"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\91891\Desktop\Projects\Seating Arrangement\streamlit.py", line 351, in <module>
+    build_attendance_pdf(
+    ~~~~~~~~~~~~~~~~~~~~^
+        pdf_buffer=pdf_buf,
+        ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        roll_name_map=roll_name_map
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\91891\Desktop\Projects\Seating Arrangement\streamlit.py", line 286, in build_attendance_pdf
+    pdf.build(elements)
+    ~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\doctemplate.py", line 1322, in build
+    BaseDocTemplate.build(self,flowables, canvasmaker=canvasmaker)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\doctemplate.py", line 1083, in build
+    self.handle_flowable(flowables)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\doctemplate.py", line 932, in handle_flowable
+    if frame.add(f, canv, trySplit=self.allowSplitting):
+       ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\frames.py", line 201, in _add
+    flowable.drawOn(canv, self._x + self._leftExtraIndent, y, _sW=aW-w)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\flowables.py", line 112, in drawOn
+    self._drawOn(canvas)
+    ~~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\flowables.py", line 93, in _drawOn
+    self.draw()#this is the bit you overload
+    ~~~~~~~~~^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\tables.py", line 2355, in draw
+    self._drawCell(cellval, cellstyle, (colpos, rowpos), (colwidth, rowheight))
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\tables.py", line 2568, in _drawCell
+    v.drawOn(self.canv,x,y)
+    ~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\flowables.py", line 112, in drawOn
+    self._drawOn(canvas)
+    ~~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\flowables.py", line 93, in _drawOn
+    self.draw()#this is the bit you overload
+    ~~~~~~~~~^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\tables.py", line 2355, in draw
+    self._drawCell(cellval, cellstyle, (colpos, rowpos), (colwidth, rowheight))
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\tables.py", line 2551, in _drawCell
+    w, h = self._listCellGeom(cellval,colwidth,cellstyle,W=W, H=H,aH=rowheight)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\tables.py", line 500, in _listCellGeom
+    vw, vh = v.wrapOn(canv, aW, aH)
+             ~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\flowables.py", line 123, in wrapOn
+    w, h = self.wrap(aW,aH)
+           ~~~~~~~~~^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\flowables.py", line 510, in wrap
+    return self.drawWidth, self.drawHeight
+           ^^^^^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\flowables.py", line 504, in __getattr__
+    self._setup_inner()
+    ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\flowables.py", line 461, in _setup_inner
+    img = self._img
+          ^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\platypus\flowables.py", line 498, in __getattr__
+    self._img = ImageReader(self._file)
+                ~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\lib\utils.py", line 655, in __init__
+    annotateException('\nfileName=%r identity=%s'%(fileName,self.identity()))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\lib\utils.py", line 1176, in annotateException
+    rl_reraise(t,t(sep.join((_ for _ in (msg,str(v),postMsg) if _))),b)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\lib\utils.py", line 138, in rl_reraise
+    raise v.with_traceback(b)
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\lib\utils.py", line 643, in __init__
+    fp = open_for_read(fileName,'b')
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\lib\utils.py", line 534, in open_for_read
+    return open_for_read(name,mode)
+  File "C:\Users\91891\AppData\Local\Programs\Python\Python313\Lib\site-packages\reportlab\lib\utils.py", line 532, in open_for_read
+    raise IOError('Cannot open resource "%s"' % name)
+OSError: 
+fileName='no_image_available.png' identity=[ImageReader@0x1b21543bb60 filename='no_image_available.png'] Cannot open resource "no_image_available.png"
