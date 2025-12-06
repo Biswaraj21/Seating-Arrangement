@@ -250,7 +250,7 @@ def build_attendance_pdf(pdf_buffer, date, day, slot, room, subject, rolls, roll
 # STREAMLIT APP
 # ============================================================
 
-st.title("🪑 Exam Seating Arrangement Generator (Auto-Aligned PDF)")
+st.title("Exam Seating Arrangement Generator")
 
 uploaded_file = st.file_uploader("Upload input_data.xlsx", type=["xlsx"])
 buffer = st.number_input("Buffer", 0, 50, value=5)
@@ -325,9 +325,9 @@ if uploaded_file:
                             zipf.writestr(filename, pdf_buf.read())
 
         zip_buffer.seek(0)
-        st.success("🎉 Generated Successfully!")
+        st.success(" Generated Successfully!")
         st.download_button(
-            "📥 Download ZIP",
+            "Download ZIP",
             data=zip_buffer,
             file_name="seating_arrangement.zip",
             mime="application/zip"
